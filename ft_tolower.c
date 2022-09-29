@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aitlopez <aitlopez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 14:06:59 by aitlopez          #+#    #+#             */
-/*   Updated: 2022/09/29 17:58:19 by aitlopez         ###   ########.fr       */
+/*   Created: 2022/09/28 20:49:00 by aitlopez          #+#    #+#             */
+/*   Updated: 2022/09/28 20:55:00 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+int	ft_tolower(int c)
 {
-	return ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122));
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
+	return (c);
 }
-
-/*
-int	main(void)
-{
-	printf("%d\n", ft_isalnum('a'));
-}
-*/

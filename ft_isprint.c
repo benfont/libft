@@ -6,13 +6,15 @@
 /*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:19:35 by aitlopez          #+#    #+#             */
-/*   Updated: 2022/09/26 17:20:55 by aitlopez         ###   ########.fr       */
+/*   Updated: 2022/09/29 18:04:10 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-	return(c >= 040 && c <= 176);
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }

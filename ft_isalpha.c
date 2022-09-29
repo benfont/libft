@@ -6,19 +6,20 @@
 /*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 12:47:39 by aitlopez          #+#    #+#             */
-/*   Updated: 2022/09/19 12:57:12 by aitlopez         ###   ########.fr       */
+/*   Updated: 2022/09/29 17:57:33 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_isalpha (int c)
+int	ft_isalpha(int c)
 {
-	return((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
+	return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
 }
 
+/*
 int	main(void)
 {
 	printf("%d\n", ft_isalpha('a'));
 }
-
+*/

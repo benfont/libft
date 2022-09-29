@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aitlopez <aitlopez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 14:06:59 by aitlopez          #+#    #+#             */
-/*   Updated: 2022/09/29 17:58:19 by aitlopez         ###   ########.fr       */
+/*   Created: 2022/09/28 21:30:55 by aitlopez          #+#    #+#             */
+/*   Updated: 2022/09/29 17:45:42 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	return ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122));
-}
+	size_t	i;
 
-/*
-int	main(void)
-{
-	printf("%d\n", ft_isalnum('a'));
+	i = 0;
+	while ((s1[i] != '\0' || s2[i] != '\0') && (i < n))
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (0);
 }
-*/
