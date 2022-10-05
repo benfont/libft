@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aitlopez <aitlopez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 15:50:42 by aitlopez          #+#    #+#             */
-/*   Updated: 2022/09/29 19:40:45 by aitlopez         ###   ########.fr       */
+/*   Created: 2022/10/04 19:04:20 by aitlopez          #+#    #+#             */
+/*   Updated: 2022/10/04 19:14:07 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strdup(const char *s1)
 {
+	char	*s1cpy;
+	size_t	len;
 	size_t	i;
-	size_t	j;
 
+	len = ft_strlen(s1);
+	s1cpy = malloc((len + 1) * sizeof(char));
 	i = 0;
-	j = 0;
-	if (*little == '\0')
-		return ((char *)big);
-	if (big == NULL && len == 0)
-		return (NULL);
-	while (big[i] != '\0' && i < len)
+	if (s1cpy == 0)
+		return (0);
+	while (i < len)
 	{
-		while (big[i + j] == little[j] && i + j < len)
-		{
-			j++;
-			if (little[j] == '\0')
-				return ((char *)big + i);
-		}
+		s1cpy[i] = s1[i];
 		i++;
 	}
-	return (0);
+	s1cpy[i] = '\0';
+	return (s1cpy);
 }

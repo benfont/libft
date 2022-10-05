@@ -1,37 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aitlopez <aitlopez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 15:50:42 by aitlopez          #+#    #+#             */
-/*   Updated: 2022/09/29 19:40:45 by aitlopez         ###   ########.fr       */
+/*   Created: 2022/10/04 20:32:17 by aitlopez          #+#    #+#             */
+/*   Updated: 2022/10/05 19:38:45 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char	*dest;
 	size_t	i;
 	size_t	j;
 
-	i = 0;
 	j = 0;
-	if (*little == '\0')
-		return ((char *)big);
-	if (big == NULL && len == 0)
+	i = 0;
+	while (ft_strlen(s) > (start + j) && j < len)
+		j++;
+	dest = (char *)malloc(sizeof(char) * (j + 1));
+	if (!dest)
 		return (NULL);
-	while (big[i] != '\0' && i < len)
+	while (i < j)
 	{
-		while (big[i + j] == little[j] && i + j < len)
-		{
-			j++;
-			if (little[j] == '\0')
-				return ((char *)big + i);
-		}
+		dest[i] = s[i + start];
 		i++;
 	}
+	dest[i] = 0;
+	return (dest);
+}
+
+int	main()
+{
+	char src[] = "substr function implementation";
+	int m = 7;
+	int n = 12;
+
+	char* dest = ft_substr(src, m, n);
+	printf("%s\n", dest);
+
 	return (0);
 }

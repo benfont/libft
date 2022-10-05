@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aitlopez <aitlopez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 15:50:42 by aitlopez          #+#    #+#             */
-/*   Updated: 2022/09/29 19:40:45 by aitlopez         ###   ########.fr       */
+/*   Created: 2022/10/05 17:32:34 by aitlopez          #+#    #+#             */
+/*   Updated: 2022/10/05 18:23:37 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	size_t	j;
+	char	*str;
+	int		i;
 
-	i = 0;
-	j = 0;
-	if (*little == '\0')
-		return ((char *)big);
-	if (big == NULL && len == 0)
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!str)
 		return (NULL);
-	while (big[i] != '\0' && i < len)
+	i = 0;
+	while (*s1)
 	{
-		while (big[i + j] == little[j] && i + j < len)
-		{
-			j++;
-			if (little[j] == '\0')
-				return ((char *)big + i);
-		}
+		str[i] = *s1++;
 		i++;
 	}
-	return (0);
+	while (*s2)
+	{
+		str[i] = *s2++;
+		i++;
+	}
+	str[i] = 0;
+	return (str);
+}
+
+int	main(void)
+{
+	ft_strjoin("Hola", "que tal");
 }
