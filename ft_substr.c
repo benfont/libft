@@ -6,11 +6,11 @@
 /*   By: aitlopez <aitlopez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 20:32:17 by aitlopez          #+#    #+#             */
-/*   Updated: 2022/10/05 19:38:45 by aitlopez         ###   ########.fr       */
+/*   Updated: 2022/10/09 19:12:43 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft"
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -34,6 +34,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (dest);
 }
 
+/*
 int	main()
 {
 	char src[] = "substr function implementation";
@@ -42,6 +43,6 @@ int	main()
 
 	char* dest = ft_substr(src, m, n);
 	printf("%s\n", dest);
-
 	return (0);
 }
+*/

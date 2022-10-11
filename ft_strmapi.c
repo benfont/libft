@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 18:52:28 by aitlopez          #+#    #+#             */
-/*   Updated: 2022/10/05 18:56:42 by aitlopez         ###   ########.fr       */
+/*   Updated: 2022/10/10 19:23:00 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	str = ft_strdup(s);
 	if (!str)
-		retur (NULL);
+		return (NULL);
 	while (str[i])
 	{
 		str[i] = (*f)(i, str[i]);

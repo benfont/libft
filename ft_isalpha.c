@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 12:47:39 by aitlopez          #+#    #+#             */
-/*   Updated: 2022/09/29 17:57:33 by aitlopez         ###   ########.fr       */
+/*   Updated: 2022/10/10 19:12:21 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,5 @@
 
 int	ft_isalpha(int c)
 {
-	return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
+	return (!(c < 'A' || c > 'z' || (c > 'Z' && c < 'a')));
 }
-
-/*
-int	main(void)
-{
-	printf("%d\n", ft_isalpha('a'));
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 14:06:59 by aitlopez          #+#    #+#             */
-/*   Updated: 2022/09/29 17:58:19 by aitlopez         ###   ########.fr       */
+/*   Updated: 2022/10/09 18:58:45 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,5 @@
 
 int	ft_isalnum(int c)
 {
-	return ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122));
+	return ((ft_isalpha(c) || ft_isdigit(c)));
 }
-
-/*
-int	main(void)
-{
-	printf("%d\n", ft_isalnum('a'));
-}
-*/

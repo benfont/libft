@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aitlopez <aitlopez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 19:13:22 by aitlopez          #+#    #+#             */
-/*   Updated: 2022/10/10 19:53:47 by aitlopez         ###   ########.fr       */
+/*   Created: 2022/10/06 19:33:24 by aitlopez          #+#    #+#             */
+/*   Updated: 2022/10/09 18:46:46 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, char *src, size_t size)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
-	int		k;
+	unsigned int	i;
 
 	i = 0;
-	k = ft_strlen(src);
-	if (size > 0)
+	while (s[i])
 	{
-		while ((src[i]) && (i < size -1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = 0;
+		(*f)(i, &s[i]);
+		i++;
 	}
-	return (k);
 }
+
+/*
+int	main(void)
+{
+	ft_strmapi(cuatro, );
+}
+*/
